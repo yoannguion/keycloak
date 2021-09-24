@@ -160,7 +160,14 @@ public interface ClientModel extends ClientScopeModel, RoleContainerModel,  Prot
     String getClientAuthenticatorType();
     void setClientAuthenticatorType(String clientAuthenticatorType);
 
+    /**
+     * See {@link ClientProvider#validateSecret(ClientModel, String)} (ClientModel, String)}
+     * @param secret
+     * @return
+     */
+    @Deprecated
     boolean validateSecret(String secret);
+
     String getSecret();
     public void setSecret(String secret);
 

@@ -141,6 +141,10 @@ public interface RealmModel extends RoleContainerModel {
     }
     void removeAttribute(String name);
     String getAttribute(String name);
+    default String getAttribute(String name, String defaultValue) {
+        String v = getAttribute(name);
+        return v != null ? v : defaultValue;
+    }
     default Integer getAttribute(String name, Integer defaultValue) {
         String v = getAttribute(name);
         return v != null ? Integer.parseInt(v) : defaultValue;
